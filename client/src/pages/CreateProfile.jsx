@@ -35,6 +35,7 @@ function CreateProfile(){
   } catch (error) {
    alert("Failed to save profile. " + (error.response?.data?.message || "Check server connection or Database columns."));
   }
+ };
 
  return(
 
