@@ -25,15 +25,16 @@ function CreateProfile(){
    mobile
   };
 
-  await axios.post(
-   ((process.env.REACT_APP_API_URL || "http://localhost:5000") + "/api/user/create-profile"),
-   data
-  );
-
-  alert("Profile Created Successfully!");
-  navigate("/dashboard");
-
- };
+  try {
+   await axios.post(
+    ((process.env.REACT_APP_API_URL || "http://localhost:5000") + "/api/user/create-profile"),
+    data
+   );
+   alert("Profile Created Successfully!");
+   navigate("/dashboard");
+  } catch (error) {
+   alert("Failed to save profile. " + (error.response?.data?.message || "Check server connection or Database columns."));
+  }
 
  return(
 
