@@ -12,6 +12,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Roommate Finder backend is running. Use /api/auth, /api/user, /api/match, or /api/properties.");
+});
+
+app.use("/api", authRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/match", matchRoutes);

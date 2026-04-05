@@ -21,7 +21,7 @@ function Matches(){
 
   try {
    const res = await axios.get(
-    `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/match/${form.location || 'any'}/${form.budget || 'any'}/${form.mother_tongue || 'any'}/${form.region || 'any'}/${form.occupation || 'any'}/${form.age || 'any'}`
+    `${process.env.REACT_APP_API_URL || 'https://roommie-finder.onrender.com'}/api/match/${form.location || 'any'}/${form.budget || 'any'}/${form.mother_tongue || 'any'}/${form.region || 'any'}/${form.occupation || 'any'}/${form.age || 'any'}`
    );
    setUsers(res.data);
   } catch (error) {
