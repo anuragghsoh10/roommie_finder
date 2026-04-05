@@ -13,8 +13,8 @@ function Login(){
   try {
    setErrorMsg("");
    await axios.post(
-    ((process.env.REACT_APP_API_URL || "http://localhost:5000") + "/api/auth/send-otp"),
-    {mobile}
+  "https://roommie-finder.onrender.com/api/auth/send-otp",
+  { mobile }
    );
 
    localStorage.setItem("mobile",mobile);
