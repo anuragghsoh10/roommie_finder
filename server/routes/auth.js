@@ -64,10 +64,9 @@ router.post("/verify-otp", async (req,res)=>{
  }
 
  catch(error){
-
-  res.status(500).json(error);
-
- }
+  console.log("TWILIO ERROR:", error);   // 🔥 ADD THIS
+  res.status(500).json({ message: error.message });
+}
 
 });
 
